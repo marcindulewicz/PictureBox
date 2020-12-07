@@ -35,6 +35,7 @@ namespace PictureBox
             oFDPhotoDirectory.ShowDialog();
             var photoDirectory = oFDPhotoDirectory.FileName;
             InsertImage(photoDirectory);
+            
         }
         private void BtnRemovePhoto_Click(object sender, EventArgs e)
         {
@@ -64,12 +65,24 @@ namespace PictureBox
             try
             {
                 pbPhoto.Image = Image.FromFile(filePath);
+                InsertPhotoDirectoryToFile(filePath);
                 btnRemovePhoto.Visible = true;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void InsertPhotoDirectoryToFile(string filePath)
+        {
+            var photoTxtDirectory = Program.filePath;
+            if (File.Exists(photoTxtDirectory))
+                File.Delete(photoTxtDirectory);
+            using (FileStream fileStream = File.Create(photoTxtDirectory))
+            {
+                Byte[] textToFile = new UTF8Encoding(true).GetBytes(filePath);
+                fileStream.Write(textToFile, 0, textToFile.Length);
             }
         }
     }
