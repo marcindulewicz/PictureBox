@@ -50,10 +50,15 @@ namespace PictureBox
 
         private void BtnRemovePhoto_Click(object sender, EventArgs e)
         {
+            var dialog = MessageBox.Show("Czy na pewno chcesz usunąć zdjęcie?", "Potwierdzenie usunięcia",MessageBoxButtons.YesNo);
 
+            if (dialog == DialogResult.Yes)
+            {
+                pbPhoto.Image = null;
+                btnRemovePhoto.Visible = false;
+            }
 
-            pbPhoto.Image = null;
-            btnRemovePhoto.Visible = false;
+            
         }
     }
 }
