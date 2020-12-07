@@ -18,24 +18,13 @@ namespace PictureBox
         {
             InitializeComponent();
             InitializePhoto();
-
-
-
         }
-
-
-
-
-
-
-
 
         private void BtnAddPhoto_Click(object sender, EventArgs e)
         {
             oFDPhotoDirectory.ShowDialog();
             var photoDirectory = oFDPhotoDirectory.FileName;
-            InsertImage(photoDirectory);
-            
+            InsertImage(photoDirectory);  
         }
         private void BtnRemovePhoto_Click(object sender, EventArgs e)
         {
@@ -43,6 +32,7 @@ namespace PictureBox
             if (dialog == DialogResult.Yes)
             {
                 pbPhoto.Image = null;
+                InsertPhotoDirectoryToFile("");
                 btnRemovePhoto.Visible = false;
             }
         }
@@ -85,5 +75,6 @@ namespace PictureBox
                 fileStream.Write(textToFile, 0, textToFile.Length);
             }
         }
+
     }
 }
