@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace PictureBox
 {
+    
     static class Program
     {
+        public static string filePath = Path.Combine(Environment.CurrentDirectory, "PhotoDirectory.txt");
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
