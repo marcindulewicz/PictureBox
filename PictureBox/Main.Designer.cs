@@ -28,20 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pbPhoto = new System.Windows.Forms.PictureBox();
+            this.btnAddPhoto = new System.Windows.Forms.Button();
+            this.btnRemovePhoto = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pbPhoto
+            // 
+            this.pbPhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbPhoto.Location = new System.Drawing.Point(12, 65);
+            this.pbPhoto.Name = "pbPhoto";
+            this.pbPhoto.Size = new System.Drawing.Size(776, 373);
+            this.pbPhoto.TabIndex = 0;
+            this.pbPhoto.TabStop = false;
+            // 
+            // btnAddPhoto
+            // 
+            this.btnAddPhoto.BackColor = System.Drawing.Color.Aquamarine;
+            this.btnAddPhoto.Location = new System.Drawing.Point(12, 12);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(138, 47);
+            this.btnAddPhoto.TabIndex = 1;
+            this.btnAddPhoto.Text = "Dodaj zdjęcie";
+            this.btnAddPhoto.UseVisualStyleBackColor = false;
+            // 
+            // btnRemovePhoto
+            // 
+            this.btnRemovePhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemovePhoto.BackColor = System.Drawing.Color.Crimson;
+            this.btnRemovePhoto.Location = new System.Drawing.Point(655, 12);
+            this.btnRemovePhoto.Name = "btnRemovePhoto";
+            this.btnRemovePhoto.Size = new System.Drawing.Size(133, 47);
+            this.btnRemovePhoto.TabIndex = 1;
+            this.btnRemovePhoto.Text = "Usuń zdjęcie";
+            this.btnRemovePhoto.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(805, 450);
+            this.Controls.Add(this.btnRemovePhoto);
+            this.Controls.Add(this.btnAddPhoto);
+            this.Controls.Add(this.pbPhoto);
             this.Name = "Main";
             this.Text = "PictureBox";
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pbPhoto;
+        private System.Windows.Forms.Button btnAddPhoto;
+        private System.Windows.Forms.Button btnRemovePhoto;
     }
 }
 
